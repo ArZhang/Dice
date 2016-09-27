@@ -6,6 +6,8 @@ void setup()
 }
 void draw()
 {
+	background(0,0,0);
+	int sum = 0;
 	for(int j = 1; j<=5; j++)
 	{
 	for(int i = 1; i<=5; i++)
@@ -13,8 +15,10 @@ void draw()
 	Die bob = new Die(i*80,j*80);
 	bob.show();
 	bob.roll();
+	sum = sum +bob.numDots;
 	}
 	}
+	text("sum is "+ sum,20,20);
 }
 void mousePressed()
 {
@@ -93,7 +97,7 @@ class Die
 			ellipse(myX+20,myY+60,15,15);
 			ellipse(myX+60,myY+60,15,15);
 		}
-
+		text(""+numDots,myX,myY);
 	}
 	
 }
